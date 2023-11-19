@@ -1,15 +1,17 @@
 import React, {useState, useEffect} from "react";
 
-function Clock (){
-  const [clock, setClock] = useState(new Date().toLocaleTimeString());
+function Clock (props){
+  const [clock, setClock] = useState(
+    new Date().toLocaleString("en-GB", { timeZone: props.title })
+  );
 
   useEffect(() => {
-    setInterval(setClock(new Date().toLocaleTimeString()), 1000)
+    setInterval(() => {setClock(new Date().toLocaleTimeString("en-GB", { timeZone: props.title }));}, 1000)
   });
 
   return (
     <>
-      <p>It is {clock}.</p>
+      <p>{props.title} : {clock}.</p>
     </>
   );
 }

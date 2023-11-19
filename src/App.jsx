@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "./logo.png";
 import "./App.css";
-import Counter from "./Counter.jsx"
 import Clock from "./Clock.jsx";
 
 class App extends React.Component {
@@ -9,9 +8,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />        
-          <Counter/>
-          <Clock/>
+          <img src={logo} className="App-logo" alt="logo" />
+          <Clock title="Asia/Singapore" />
+          <Clock title="America/Los_Angeles" />
+          <Clock title="Europe/London" />
         </header>
       </div>
     );
